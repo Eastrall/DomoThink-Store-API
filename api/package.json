@@ -1,0 +1,48 @@
+{
+  "name": "domothink-api",
+  "version": "1.0.0",
+  "description": "DomoThink Test API",
+  "main": "app/server.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "dev": "nodemon --exec babel-node app/server.js",
+    "prestart": "npm run clean && babel app --out-dir dist",
+    "start": "node dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eastrall/DomoThink-Test-API.git"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "Filipe GOMES PEIXOTO, Guillaume Munsch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eastrall/DomoThink-Test-API/issues"
+  },
+  "homepage": "https://github.com/Eastrall/DomoThink-Test-API#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "consign": "^0.1.2",
+    "express": "^4.14.0",
+    "express-session": "^1.14.1",
+    "fs": "0.0.1-security",
+    "ini": "^1.3.4",
+    "jwt-simple": "^0.5.0",
+    "mysql": "^2.11.1",
+    "net": "^1.0.2",
+    "orm": "^3.1.0",
+    "sha1": "^1.1.1",
+    "simple-git": "^1.54.0",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
+    "eslint": "^3.5.0",
+    "eslint-config-google": "^0.6.0",
+    "nodemon": "^1.10.2",
+    "rimraf": "^2.5.4"
+  }
+}
