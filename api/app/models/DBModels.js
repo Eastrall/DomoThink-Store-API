@@ -18,52 +18,8 @@ class Models {
   }
 
   defineModels() {
-    this.defineUser();
-    this.defineDevices();
-    this.defineDirectives();
     this.defineStorePlugins();
     this.defineStorePluginComments();
-    this.defineLocalPlugins();
-  }
-
-  defineUser() {
-    this.UserModel = this.db.define('users', {
-      userId: {type: 'serial', key: true},
-      username: {type: 'text'},
-      password: {type: 'text'},
-      boxKey: {type: 'text'}
-    });
-  }
-
-  defineDevices() {
-    this.DeviceModel = this.db.define('devices', {
-      idDevice: {type: 'serial', key: true},
-      name: {type: 'text'},
-      description: {type: 'text'},
-      status: Boolean
-    });
-  }
-
-  defineDirectives() {
-    this.DirectiveModel = this.db.define('directives', {
-      idDirective: {type: 'serial', key: true},
-      name: {type: 'text'},
-      creatorId: {type: 'number'},
-      deviceId: {type: 'number'},
-      actionId: {type: 'number'},
-      periodicityType: {type: 'number'},
-      periodicityData: {type: 'text'}
-      // Reste
-    });
-  }
-
-  defineLocalPlugins() {
-    this.PluginModel = this.db.define('plugins', {
-      idPlugin: {type: 'serial', key: true},
-      name: {type: 'text'},
-      status: Boolean
-      // Reste
-    });
   }
 
   defineStorePlugins() {

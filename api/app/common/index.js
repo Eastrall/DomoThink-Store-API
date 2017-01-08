@@ -1,5 +1,5 @@
-import dirs from './dirs';
-
-export {
-  dirs
-};
+// import exemple from './exemple';
+//
+// export {
+//   exemple
+// };
