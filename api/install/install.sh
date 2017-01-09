@@ -116,6 +116,8 @@ function clean_all {
 
 function start_service {
   sudo /usr/sbin/service domothink-store start
+  sudo /usr/sbin/service domothink-store stop
+  sudo /usr/sbin/service domothink-store start
 }
 
 ##############
