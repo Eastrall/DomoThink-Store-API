@@ -20,9 +20,9 @@ function log {
 }
 
 function remove_domothink_service {
-  log "info" "Removing DomoThink service..."
-  sudo service domothink stop
-  sudo forever-service delete domothink
+  log "info" "Removing DomoThink-Store service..."
+  sudo service domothink-store stop
+  sudo forever-service delete domothink-store
   log "info" "DomoThink service deleted!"
 }
 
@@ -59,7 +59,7 @@ function clean_all {
   sudo apt-get autoremove -y
 }
 
-log "info" "Uninstalling DomoThink API"
+log "info" "Uninstalling DomoThink-Store API"
 
 remove_domothink_service
 remove_node_js
@@ -68,4 +68,4 @@ remove_mysql_server
 remove_postgresql_server
 clean_all
 
-log "info" "DomoThink API uninstalled!"
+log "info" "DomoThink-Store API uninstalled!"
