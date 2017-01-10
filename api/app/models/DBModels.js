@@ -20,6 +20,7 @@ class Models {
   defineModels() {
     this.defineStorePlugins();
     this.defineStorePluginComments();
+    this.defineApiVersion();
   }
 
   defineStorePlugins() {
@@ -44,6 +45,13 @@ class Models {
       keyLoginHash: {type: 'text'}
     });
     this.StorePluginCommentsModel.hasOne('storeplugins', this.StorePluginsModel, {reverse: "storeplugincomments"});
+  }
+
+  defineApiVersion() {
+    this.ApiVersion = this.db.define('apiversion', {
+      version: {type: 'text', key: true},
+      password: {type: 'text'}
+    });
   }
 }
 
