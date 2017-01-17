@@ -21,9 +21,6 @@ class StoreComments {
     dbModels.StorePluginCommentsModel.find({storeplugins_idPlugin: req.params.id}, (err, result) => { // eslint-disable-line camelcase
       if (err)
         return httpCode.error500(res, "Impossible to get comments");
-      result.forEach(comment => {
-        comment.keyLoginHash = null;
-      });
       res.json(result);
     });
     logger.notice("Getting comments");
@@ -38,7 +35,6 @@ class StoreComments {
               return httpCode.error404(res, "Comment not found");
             }
             logger.notice(`Getting comment {${req.params.id}}`);
-            comment.keyLoginHash = null;
             return res.json(comment);
           });
   }
