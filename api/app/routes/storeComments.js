@@ -90,7 +90,7 @@ class StoreComments {
      * @returns {object} codeode The success/error code
      */
   delete(req, res) {
-    dbModels.StorePluginCommentsModel.one({idComment: req.body.idComment, keyLoginHash: req.body.keyLoginHash}, (error, comment) => {
+    dbModels.StorePluginCommentsModel.one({idComment: req.params.id}, (error, comment) => {
       if (!comment) {
         return httpCode.error404(res, "Comment not found");
       }
@@ -100,7 +100,7 @@ class StoreComments {
           httpCode.success(res, "Comment removed !")
         );
       });
-      logger.notice(`Removing comment {${req.body.idComment}}`);
+      logger.notice(`Removing comment {${req.params.id}}`);
     });
   }
 

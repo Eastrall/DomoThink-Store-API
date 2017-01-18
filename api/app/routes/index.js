@@ -23,7 +23,7 @@ routes.get("/store/:id/comments", storeComments.get);
 routes.get("/store/comments/:id", storeComments.getComment);
 routes.post("/store/:id/comments", storeComments.post);
 routes.put("/store/comments", storeComments.put);
-routes.delete("/store/comments", storeComments.delete);
+routes.delete("/store/comments/:id", storeComments.delete);
 
 // Update
 routes.get('/update', update.get);
